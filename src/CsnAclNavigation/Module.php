@@ -45,7 +45,7 @@ class Module
 					$acl = $sm->get('acl');
 
 					$auth = $sm->get('Zend\Authentication\AuthenticationService');
-					$role = \CsnAuthorization\Acl\Acl::DEFAULT_ROLE; // The default role is guest $acl
+					$role = $acl->getDefaultRole(); // The default role is guest $acl
 
 					if ($auth->hasIdentity()) {
 						$user = $auth->getIdentity();	
